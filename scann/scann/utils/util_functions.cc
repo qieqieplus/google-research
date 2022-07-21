@@ -338,8 +338,8 @@ void PackNibblesDatapoint(ConstSpan<uint8_t> hash,
 }
 
 void UnpackNibblesDatapoint(const DatapointPtr<uint8_t>& packed,
-                            Datapoint<uint8_t>* hash) {
-  const auto hash_size = packed.dimensionality();
+                            Datapoint<uint8_t>* hash,
+                            DimensionIndex hash_size) {
   hash->clear();
   hash->set_dimensionality(hash_size);
   hash->mutable_values()->resize(hash_size, 0);

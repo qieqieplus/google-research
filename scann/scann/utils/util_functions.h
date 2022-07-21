@@ -456,7 +456,8 @@ void PackNibblesDatapoint(const DatapointPtr<uint8_t>& hash,
 void PackNibblesDatapoint(ConstSpan<uint8_t> hash, MutableSpan<uint8_t> packed);
 
 void UnpackNibblesDatapoint(const DatapointPtr<uint8_t>& packed,
-                            Datapoint<uint8_t>* hash);
+                            Datapoint<uint8_t>* hash,
+                            DimensionIndex hash_size);
 
 void UnpackNibblesDatapoint(ConstSpan<uint8_t> packed,
                             MutableSpan<uint8_t> hash,

@@ -66,7 +66,7 @@ shared_ptr<DenseDataset<uint8_t>> PreprocessHashedDataset(
     dataset_unpacked->Reserve(hashed_dataset->size());
     Datapoint<uint8_t> unpacked_dp;
     for (const auto& dptr : *hashed_dataset) {
-      UnpackNibblesDatapoint(dptr, &unpacked_dp);
+      UnpackNibblesDatapoint(dptr, &unpacked_dp, num_blocks);
       TF_CHECK_OK(dataset_unpacked->Append(unpacked_dp.ToPtr(), ""));
     }
     return dataset_unpacked;
